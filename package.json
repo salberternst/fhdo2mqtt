@@ -1,0 +1,27 @@
+{
+  "name": "fhdo2mqtt",
+  "version": "0.1.0",
+  "description": "Pushes fhdo digital twin data to mqtt",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run start:production",
+    "start:production": "cross-env NODE_ENV=production node .",
+    "start:development": "cross-env NODE_ENV=development forever --killSignal=SIGTERM --minUptime 1000 --spinSleepTime 1000 -c 'node --inspect=0.0.0.0:9229' -w index.js .",
+    "lint": "prettier --write '**/*.js' && standard --fix '**/*.js'",
+    "depcheck": "depcheck"
+  },
+  "author": "Sebastian Alberternst <sebastian.alberternst@dfki.de>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "env-var": "^7.1.1",
+    "mqtt": "^4.3.7",
+    "pws": "^6.0.0",
+    "ws": "^8.7.0"
+  },
+  "devDependencies": {
+    "depcheck": "^1.4.3",
+    "prettier": "^2.6.2",
+    "standard": "^17.0.0"
+  }
+}
